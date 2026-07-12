@@ -8,18 +8,33 @@ import { tools } from "@/config/tools";
 import { siteConfig } from "@/config/site";
 import { ThemeToggle } from "./theme-toggle";
 import { cn } from "@/lib/utils/cn";
+import { useEffect, useState } from "react";
+import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 
 const navLinks = [
+  { href: "/pricing", label: "Pricing" },
   { href: "/what-is-json", label: "JSON Guide" },
   { href: "/documentation", label: "Docs" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
 ];
 
+
+
 export function Navbar() {
   const [megaOpen, setMegaOpen] = React.useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [query, setQuery] = React.useState("");
+  const [userEmail, setUserEmail] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    const supabase = createSupabaseBrowserClient();
+    supabase.auth.getUser().then(({ data }) => setUserEmail(data.user?.email ?? null));
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUserEmail(session?.user?.email ?? null);
+    });
+    return () => listener.subscription.unsubscribe();
+  }, []);
   const pathname = usePathname();
   const router = useRouter();
 
@@ -121,6 +136,26 @@ export function Navbar() {
               className="h-9 w-48 rounded-md border border-border bg-muted/40 pl-8 pr-3 text-sm outline-none placeholder:text-muted-foreground focus:border-primary/50 focus:ring-1 focus:ring-primary/30"
             />
           </div>
+          {userEmail ? (
+            <Link
+              href="/account"
+              className="hidden rounded-md px-3 py-2 text-sm font-medium text-foreground/80 hover:text-foreground sm:block"
+            >
+              Account
+            </Link>
+          ) : (
+            <div className="hidden items-center gap-2 sm:flex">
+              <Link href="/login" className="rounded-md px-3 py-2 text-sm font-medium text-foreground/80 hover:text-foreground">
+                Log in
+              </Link>
+              <Link
+                href="/signup"
+                className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-3.5 text-sm font-medium text-primary-foreground hover:brightness-110"
+              >
+                Sign up free
+              </Link>
+            </div>
+          )}
           <ThemeToggle />
           <button
             className="rounded-md p-2 text-foreground md:hidden"

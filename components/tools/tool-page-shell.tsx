@@ -5,11 +5,21 @@ import { FaqSection } from "./faq-section";
 import { RelatedTools } from "./related-tools";
 import type { ToolConfig } from "@/types/tool";
 
+const PLAN_LABEL: Record<string, string> = {
+  starter: "Starter",
+  pro: "Pro",
+  business: "Business",
+};
+
 export function ToolPageShell({ tool, children }: { tool: ToolConfig; children: ReactNode }) {
+  const eyebrow = tool.isPro
+    ? `${PLAN_LABEL[tool.proTier ?? "starter"]} plan · 7-day free trial`
+    : "Free · No signup · Runs in your browser";
+
   return (
     <div className="bg-grid-fade">
       <section className="container pb-10 pt-14 sm:pt-20">
-        <ToolHero eyebrow="Free · No signup · Runs in your browser" title={tool.name} tagline={tool.tagline} />
+        <ToolHero eyebrow={eyebrow} title={tool.name} tagline={tool.tagline} isPro={tool.isPro} />
       </section>
 
       <section className="container pb-16">{children}</section>

@@ -4,6 +4,7 @@ import { pricingPlans, enterpriseContact } from "@/config/pricing";
 import { getCurrentSubscription } from "@/lib/subscription";
 import { CheckoutButton } from "@/features/billing/checkout-button";
 import { cn } from "@/lib/utils/cn";
+import { ProValueSection } from "@/components/pricing/pro-value-section";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -70,6 +71,8 @@ export default async function PricingPage() {
         ))}
       </div>
 
+      <ProValueSection />
+
       <div className="mt-8 rounded-2xl border border-dashed border-border p-6 text-center">
         <h2 className="font-display text-lg font-bold">{enterpriseContact.name}</h2>
         <p className="mx-auto mt-1 max-w-xl text-sm text-muted-foreground">{enterpriseContact.tagline}</p>
@@ -78,6 +81,7 @@ export default async function PricingPage() {
             <li key={f}>• {f}</li>
           ))}
         </ul>
+
         <a
           href={`mailto:${enterpriseContact.contactEmail}`}
           className="mt-4 inline-block text-sm font-medium text-primary hover:underline"

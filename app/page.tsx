@@ -9,6 +9,8 @@ import { Badge } from "@/components/ui/badge";
 import { siteConfig } from "@/config/site";
 import { toolBySlug, tools } from "@/config/tools";
 import { softwareApplicationSchema, faqSchema } from "@/lib/seo/schema";
+import { ProBadge } from "@/components/pro/pro-badge";
+import { pricingPlans } from "@/config/pricing";
 
 export const metadata: Metadata = {
   title: siteConfig.title,
@@ -32,17 +34,17 @@ export default function HomePage() {
 
       <section className="container pb-8 pt-16 text-center sm:pt-24">
         <Badge variant="outline" className="mb-5 animate-fade-up">
-          The developer&apos;s JSON toolkit
+          The JSON Intelligence Platform
         </Badge>
         <h1 className="animate-fade-up text-balance font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-          The <span className="text-primary">JSON Validator</span> that gets straight to the point
+          Every JSON problem, <span className="text-primary">one platform</span>
         </h1>
         <p
           className="mx-auto mt-5 max-w-2xl animate-fade-up text-balance text-base text-muted-foreground sm:text-lg"
           style={{ animationDelay: "80ms" }}
         >
-          Paste your JSON below and get the exact line, column, and reason for any error — instantly, and entirely
-          in your browser.
+          Validate, repair, diff, secure, and document JSON — 32 tools free forever, with Pro-grade analysis for
+          teams shipping APIs at scale. Start free, no card required.
         </p>
         <div
           className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground animate-fade-up"
@@ -83,7 +85,10 @@ export default function HomePage() {
                     className="group rounded-xl border border-border bg-card/60 p-4 transition-colors hover:border-primary/40"
                   >
                     <div className="flex items-center justify-between">
-                      <h4 className="font-display text-sm font-semibold">{tool.name}</h4>
+                      <h4 className="flex items-center gap-1.5 font-display text-sm font-semibold">
+                        {tool.name}
+                        {tool.isPro && <ProBadge />}
+                      </h4>
                       <ArrowRight className="h-3.5 w-3.5 -translate-x-1 text-muted-foreground opacity-0 transition-all group-hover:translate-x-0 group-hover:text-primary group-hover:opacity-100" />
                     </div>
                     <p className="mt-1 text-xs text-muted-foreground">{tool.tagline}</p>
@@ -104,6 +109,45 @@ export default function HomePage() {
         <h2 className="mb-6 text-center font-display text-2xl font-bold tracking-tight">Frequently asked questions</h2>
         <div className="mx-auto max-w-2xl">
           <FaqSection faqs={validator.faqs} />
+        </div>
+      </section>
+
+      <section className="container pb-20">
+        <div className="mb-6 text-center">
+          <h2 className="font-display text-2xl font-bold tracking-tight">Free forever. Pro when you need it.</h2>
+          <p className="mx-auto mt-1.5 max-w-2xl text-muted-foreground">
+            All 32 core tools are free, no account needed. Pro unlocks advanced analysis — 7-day free trial, no
+            card required.
+          </p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {pricingPlans.map((plan) => (
+            <div
+              key={plan.id}
+              className={`rounded-xl border p-5 ${plan.highlighted ? "border-primary/60 bg-primary/[0.04]" : "border-border bg-card/60"
+                }`}
+            >
+              <div className="flex items-center justify-between">
+                <h3 className="font-display text-sm font-semibold">{plan.name}</h3>
+                {plan.highlighted && <ProBadge />}
+              </div>
+              <p className="mt-2 font-display text-2xl font-bold">
+                {plan.priceMonthly === 0 ? "Free" : `$${plan.priceMonthly}`}
+                {plan.priceMonthly !== null && plan.priceMonthly > 0 && (
+                  <span className="text-sm font-normal text-muted-foreground">/mo</span>
+                )}
+              </p>
+              <p className="mt-2 text-xs text-muted-foreground">{plan.tagline}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-8 text-center">
+          <Link
+            href="/pricing"
+            className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-5 text-sm font-medium text-primary-foreground hover:brightness-110"
+          >
+            See full plan comparison
+          </Link>
         </div>
       </section>
     </div>

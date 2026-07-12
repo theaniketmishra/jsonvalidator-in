@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-// TEMP stub
+import { Sora, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
@@ -9,7 +9,9 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { websiteSchema } from "@/lib/seo/schema";
 import { siteConfig } from "@/config/site";
 
-const fontDisplay={variable:"--font-display-temp"};const fontSans={variable:"--font-sans-temp"};const fontMono={variable:"--font-mono-temp"};
+const fontDisplay = Sora({ subsets: ["latin"], variable: "--font-display" });
+const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const fontMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

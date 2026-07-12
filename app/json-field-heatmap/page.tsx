@@ -1,5 +1,6 @@
 import { ToolPageShell } from "@/components/tools/tool-page-shell";
 import { HeatmapWorkspace } from "@/features/json-field-heatmap/heatmap-workspace";
+import { ProGate } from "@/components/pro/pro-gate";
 import { JsonLd } from "@/components/seo/json-ld";
 import { toolBySlug } from "@/config/tools";
 import { buildToolMetadata } from "@/lib/seo/metadata";
@@ -22,7 +23,9 @@ export default function Page() {
         ])}
       />
       <ToolPageShell tool={tool}>
-        <HeatmapWorkspace sample={tool.sampleInput} />
+        <ProGate requiredPlan={tool.proTier ?? "starter"} featureName={tool.name}>
+          <HeatmapWorkspace sample={tool.sampleInput} />
+        </ProGate>
       </ToolPageShell>
     </>
   );
