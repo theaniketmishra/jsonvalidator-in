@@ -31,4 +31,10 @@ export interface ToolConfig {
   isPro?: boolean;
   /** Minimum plan tier required, when isPro is true. Defaults to "starter". */
   proTier?: PlanId;
+  /**
+   * One or two sentences on the concrete problem this Pro tool solves, shown
+   * on the upgrade/lock screen to give a logged-out or free user a reason to
+   * actually pay — not just a generic "this is a Pro feature" message.
+   */
+  proBenefit?: string;
 }
