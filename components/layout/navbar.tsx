@@ -8,7 +8,6 @@ import { tools } from "@/config/tools";
 import { siteConfig } from "@/config/site";
 import { ThemeToggle } from "./theme-toggle";
 import { cn } from "@/lib/utils/cn";
-import { useEffect, useState } from "react";
 import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 
 const navLinks = [
@@ -19,22 +18,11 @@ const navLinks = [
   { href: "/about", label: "About" },
 ];
 
-
-
 export function Navbar() {
   const [megaOpen, setMegaOpen] = React.useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [query, setQuery] = React.useState("");
   const [userEmail, setUserEmail] = React.useState<string | null>(null);
-
-  React.useEffect(() => {
-    const supabase = createSupabaseBrowserClient();
-    supabase.auth.getUser().then(({ data }) => setUserEmail(data.user?.email ?? null));
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUserEmail(session?.user?.email ?? null);
-    });
-    return () => listener.subscription.unsubscribe();
-  }, []);
   const pathname = usePathname();
   const router = useRouter();
 
@@ -48,6 +36,15 @@ export function Navbar() {
     setMegaOpen(false);
     setMobileOpen(false);
   }, [pathname]);
+
+  React.useEffect(() => {
+    const supabase = createSupabaseBrowserClient();
+    supabase.auth.getUser().then(({ data }) => setUserEmail(data.user?.email ?? null));
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUserEmail(session?.user?.email ?? null);
+    });
+    return () => listener.subscription.unsubscribe();
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur-lg">
@@ -92,10 +89,15 @@ export function Navbar() {
                               <li key={tool.slug}>
                                 <Link
                                   href={`/${tool.slug}`}
-                                  className="block truncate rounded-md px-2.5 py-1.5 text-sm hover:bg-muted"
+                                  className="flex items-center gap-1.5 truncate rounded-md px-2.5 py-1.5 text-sm hover:bg-muted"
                                   title={tool.name}
                                 >
                                   {tool.name}
+                                  {tool.isPro && (
+                                    <span className="rounded-full bg-primary/15 px-1.5 py-0 text-[9px] font-bold uppercase text-primary">
+                                      Pro
+                                    </span>
+                                  )}
                                 </Link>
                               </li>
                             ))}
@@ -136,6 +138,7 @@ export function Navbar() {
               className="h-9 w-48 rounded-md border border-border bg-muted/40 pl-8 pr-3 text-sm outline-none placeholder:text-muted-foreground focus:border-primary/50 focus:ring-1 focus:ring-primary/30"
             />
           </div>
+
           {userEmail ? (
             <Link
               href="/account"
@@ -156,6 +159,7 @@ export function Navbar() {
               </Link>
             </div>
           )}
+
           <ThemeToggle />
           <button
             className="rounded-md p-2 text-foreground md:hidden"
@@ -170,10 +174,25 @@ export function Navbar() {
       {mobileOpen && (
         <div className="border-t border-border/60 bg-background md:hidden">
           <div className="container flex max-h-[70vh] flex-col gap-1 overflow-y-auto py-4">
+            {!userEmail && (
+              <div className="mb-2 flex gap-2 px-2">
+                <Link href="/login" className="flex-1 rounded-md border border-border py-2 text-center text-sm font-medium">
+                  Log in
+                </Link>
+                <Link href="/signup" className="flex-1 rounded-md bg-primary py-2 text-center text-sm font-medium text-primary-foreground">
+                  Sign up free
+                </Link>
+              </div>
+            )}
             <p className="px-2 pb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Tools</p>
             {tools.map((tool) => (
-              <Link key={tool.slug} href={`/${tool.slug}`} className="rounded-md px-2 py-2 text-sm hover:bg-muted">
+              <Link key={tool.slug} href={`/${tool.slug}`} className="flex items-center gap-1.5 rounded-md px-2 py-2 text-sm hover:bg-muted">
                 {tool.name}
+                {tool.isPro && (
+                  <span className="rounded-full bg-primary/15 px-1.5 py-0 text-[9px] font-bold uppercase text-primary">
+                    Pro
+                  </span>
+                )}
               </Link>
             ))}
             <div className="my-2 h-px bg-border" />

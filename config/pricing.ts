@@ -37,6 +37,7 @@ export const pricingPlans: PricingPlan[] = [
     features: [
       "Everything in Free",
       "JSON Health Score",
+      "JSON Field Usage Heatmap",
       "Sensitive Data Scanner",
       "Payload Optimizer",
       "Semantic Diff",
@@ -53,6 +54,9 @@ export const pricingPlans: PricingPlan[] = [
     tagline: "For small teams shipping APIs who need this in their workflow.",
     features: [
       "Everything in Starter",
+      "JSON Sanitizer",
+      "JSON Complexity Analyzer",
+      "JSON Documentation Generator",
       "Higher usage limits",
       "AI-powered tools (when enabled)",
       "Priority email support",

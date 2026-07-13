@@ -387,7 +387,7 @@ export const tools: ToolConfig[] = [
     description: "Browse JSON as an interactive tree with expandable nodes — the same tree view as our JSON Viewer, tuned for the \\\"tree view\\\" workflow of drilling into deeply nested structures one level at a time.",
     metaTitle: "JSON Tree View — Explore JSON as a collapsible, color-coded tree | JSONValidator.in",
     metaDescription: "Browse JSON as an interactive tree with expandable nodes — the same tree view as our JSON Viewer, tuned for the \\\"tree view\\\" workflow of drilling into ...",
-    keywords: ["json tree view","json tree viewer online","expand collapse json"],
+    keywords: ["json tree view", "json tree viewer online", "expand collapse json"],
     sampleInput: "{\n  \"id\": 1024,\n  \"name\": \"Asha Verma\",\n  \"isActive\": true,\n  \"roles\": [\"admin\", \"editor\"],\n  \"address\": { \"city\": \"Pune\", \"pincode\": \"411001\" },\n  \"lastLogin\": null\n}",
     isLive: true,
     features: [
@@ -424,7 +424,7 @@ export const tools: ToolConfig[] = [
     description: "Paste two JSON documents to see added, removed, and changed fields at a glance — useful for comparing API responses across versions, environments, or deployments.",
     metaTitle: "JSON Diff — Compare two JSON documents and see exactly what changed | JSONValidator.in",
     metaDescription: "Paste two JSON documents to see added, removed, and changed fields at a glance — useful for comparing API responses across versions, environments, or de...",
-    keywords: ["json diff","compare json online","json comparison tool"],
+    keywords: ["json diff", "compare json online", "json comparison tool"],
     sampleInput: "{\n  \"id\": 1024,\n  \"name\": \"Asha Verma\",\n  \"isActive\": true,\n  \"roles\": [\"admin\", \"editor\"],\n  \"address\": { \"city\": \"Pune\", \"pincode\": \"411001\" },\n  \"lastLogin\": null\n}",
     isLive: true,
     features: [
@@ -461,7 +461,7 @@ export const tools: ToolConfig[] = [
     description: "Convert a block of text — code, multi-line strings, anything with quotes or newlines — into a properly escaped JSON string literal you can drop straight into a JSON document.",
     metaTitle: "JSON Escape — Escape plain text into a valid JSON string literal | JSONValidator.in",
     metaDescription: "Convert a block of text — code, multi-line strings, anything with quotes or newlines — into a properly escaped JSON string literal you can drop straight...",
-    keywords: ["json escape","escape json string online","json string escape tool"],
+    keywords: ["json escape", "escape json string online", "json string escape tool"],
     sampleInput: "Hello \"world\"\\nThis has a newline and \"quotes\".",
     isLive: true,
     features: [
@@ -498,7 +498,7 @@ export const tools: ToolConfig[] = [
     description: "Paste an escaped JSON string — with \\n, \\\", and other escape sequences — and get the original, human-readable text back.",
     metaTitle: "JSON Unescape — Unescape a JSON string literal back into plain, readable text | JSONValidator.in",
     metaDescription: "Paste an escaped JSON string — with \\n, \\\", and other escape sequences — and get the original, human-readable text back.",
-    keywords: ["json unescape","unescape json string online","decode json string"],
+    keywords: ["json unescape", "unescape json string online", "decode json string"],
     sampleInput: "\"Hello \\\"world\\\"\\nThis has a newline.\"",
     isLive: true,
     features: [
@@ -535,7 +535,7 @@ export const tools: ToolConfig[] = [
     description: "Normalize a JSON document by sorting object keys alphabetically throughout — handy for producing consistent diffs and easier-to-scan documents.",
     metaTitle: "JSON Sort Keys — Sort every object key alphabetically, at every depth | JSONValidator.in",
     metaDescription: "Normalize a JSON document by sorting object keys alphabetically throughout — handy for producing consistent diffs and easier-to-scan documents.",
-    keywords: ["json sort keys","sort json alphabetically","normalize json order"],
+    keywords: ["json sort keys", "sort json alphabetically", "normalize json order"],
     sampleInput: "{\n  \"id\": 1024,\n  \"name\": \"Asha Verma\",\n  \"isActive\": true,\n  \"roles\": [\"admin\", \"editor\"],\n  \"address\": { \"city\": \"Pune\", \"pincode\": \"411001\" },\n  \"lastLogin\": null\n}",
     isLive: true,
     features: [
@@ -572,7 +572,7 @@ export const tools: ToolConfig[] = [
     description: "Convert deeply nested JSON into a single-level object using dot and bracket notation keys (like address.city) — useful for feeding JSON into flat systems like spreadsheets or key-value stores.",
     metaTitle: "JSON Flatten — Flatten nested JSON into dot-notation keys | JSONValidator.in",
     metaDescription: "Convert deeply nested JSON into a single-level object using dot and bracket notation keys (like address.city) — useful for feeding JSON into flat system...",
-    keywords: ["json flatten","flatten nested json","json to flat object"],
+    keywords: ["json flatten", "flatten nested json", "json to flat object"],
     sampleInput: "{\n  \"id\": 1024,\n  \"name\": \"Asha Verma\",\n  \"isActive\": true,\n  \"roles\": [\"admin\", \"editor\"],\n  \"address\": { \"city\": \"Pune\", \"pincode\": \"411001\" },\n  \"lastLogin\": null\n}",
     isLive: true,
     features: [
@@ -609,7 +609,7 @@ export const tools: ToolConfig[] = [
     description: "Convert a flat object with dot/bracket-notation keys (like address.city) back into properly nested JSON.",
     metaTitle: "JSON Unflatten — Rebuild nested JSON from flattened dot-notation keys | JSONValidator.in",
     metaDescription: "Convert a flat object with dot/bracket-notation keys (like address.city) back into properly nested JSON.",
-    keywords: ["json unflatten","unflatten json","flat to nested json"],
+    keywords: ["json unflatten", "unflatten json", "flat to nested json"],
     sampleInput: `{
   "address.city": "Pune",
   "address.pincode": "411001",
@@ -651,7 +651,7 @@ export const tools: ToolConfig[] = [
     description: "Find every place a key or value appears inside a large JSON document, with the full path to each match — much faster than scanning by eye.",
     metaTitle: "JSON Search — Search for a key or value anywhere inside a JSON document | JSONValidator.in",
     metaDescription: "Find every place a key or value appears inside a large JSON document, with the full path to each match — much faster than scanning by eye.",
-    keywords: ["json search","search json online","find key in json"],
+    keywords: ["json search", "search json online", "find key in json"],
     sampleInput: "{\n  \"id\": 1024,\n  \"name\": \"Asha Verma\",\n  \"isActive\": true,\n  \"roles\": [\"admin\", \"editor\"],\n  \"address\": { \"city\": \"Pune\", \"pincode\": \"411001\" },\n  \"lastLogin\": null\n}",
     isLive: true,
     features: [
@@ -688,7 +688,7 @@ export const tools: ToolConfig[] = [
     description: "Combine two JSON documents into one, with the second document's values overriding the first's on conflict — nested objects are merged recursively, not just replaced.",
     metaTitle: "JSON Merge — Deep-merge two JSON documents into one | JSONValidator.in",
     metaDescription: "Combine two JSON documents into one, with the second document's values overriding the first's on conflict — nested objects are merged recursively, not j...",
-    keywords: ["json merge","merge json objects online","combine json documents"],
+    keywords: ["json merge", "merge json objects online", "combine json documents"],
     sampleInput: "{\n  \"id\": 1024,\n  \"name\": \"Asha Verma\",\n  \"isActive\": true,\n  \"roles\": [\"admin\", \"editor\"],\n  \"address\": { \"city\": \"Pune\", \"pincode\": \"411001\" },\n  \"lastLogin\": null\n}",
     isLive: true,
     features: [
@@ -725,7 +725,7 @@ export const tools: ToolConfig[] = [
     description: "Convert JSON into YAML — ideal for turning an API response or config into the format used by tools like Docker Compose, Kubernetes, and GitHub Actions.",
     metaTitle: "JSON to YAML — Convert JSON into clean, readable YAML | JSONValidator.in",
     metaDescription: "Convert JSON into YAML — ideal for turning an API response or config into the format used by tools like Docker Compose, Kubernetes, and GitHub Actions.",
-    keywords: ["json to yaml","convert json to yaml online","json to yaml converter"],
+    keywords: ["json to yaml", "convert json to yaml online", "json to yaml converter"],
     sampleInput: "{\n  \"id\": 1024,\n  \"name\": \"Asha Verma\",\n  \"isActive\": true,\n  \"roles\": [\"admin\", \"editor\"],\n  \"address\": { \"city\": \"Pune\", \"pincode\": \"411001\" },\n  \"lastLogin\": null\n}",
     isLive: true,
     features: [
@@ -762,7 +762,7 @@ export const tools: ToolConfig[] = [
     description: "Paste a sample JSON response and get matching TypeScript interfaces instantly — including nested interfaces for nested objects.",
     metaTitle: "JSON to TypeScript — Generate TypeScript interfaces from a JSON sample | JSONValidator.in",
     metaDescription: "Paste a sample JSON response and get matching TypeScript interfaces instantly — including nested interfaces for nested objects.",
-    keywords: ["json to typescript","json to typescript interface","generate typescript types from json"],
+    keywords: ["json to typescript", "json to typescript interface", "generate typescript types from json"],
     sampleInput: "{\n  \"id\": 1024,\n  \"name\": \"Asha Verma\",\n  \"isActive\": true,\n  \"roles\": [\"admin\", \"editor\"],\n  \"address\": { \"city\": \"Pune\", \"pincode\": \"411001\" },\n  \"lastLogin\": null\n}",
     isLive: true,
     features: [
@@ -799,7 +799,7 @@ export const tools: ToolConfig[] = [
     description: "Paste a sample JSON response and get a ready-to-use Zod schema — the runtime validation library widely used in TypeScript projects — inferred from its shape.",
     metaTitle: "JSON to Zod Schema — Generate a Zod validation schema from a JSON sample | JSONValidator.in",
     metaDescription: "Paste a sample JSON response and get a ready-to-use Zod schema — the runtime validation library widely used in TypeScript projects — inferred from its s...",
-    keywords: ["json to zod","generate zod schema from json","zod schema generator"],
+    keywords: ["json to zod", "generate zod schema from json", "zod schema generator"],
     sampleInput: "{\n  \"id\": 1024,\n  \"name\": \"Asha Verma\",\n  \"isActive\": true,\n  \"roles\": [\"admin\", \"editor\"],\n  \"address\": { \"city\": \"Pune\", \"pincode\": \"411001\" },\n  \"lastLogin\": null\n}",
     isLive: true,
     features: [
@@ -836,7 +836,7 @@ export const tools: ToolConfig[] = [
     description: "Convert JSON into a Python dictionary/list literal — true/false become True/False and null becomes None, ready to paste directly into a .py file.",
     metaTitle: "JSON to Python — Convert JSON into a Python dict literal | JSONValidator.in",
     metaDescription: "Convert JSON into a Python dictionary/list literal — true/false become True/False and null becomes None, ready to paste directly into a .py file.",
-    keywords: ["json to python","json to python dict","convert json to python dictionary"],
+    keywords: ["json to python", "json to python dict", "convert json to python dictionary"],
     sampleInput: "{\n  \"id\": 1024,\n  \"name\": \"Asha Verma\",\n  \"isActive\": true,\n  \"roles\": [\"admin\", \"editor\"],\n  \"address\": { \"city\": \"Pune\", \"pincode\": \"411001\" },\n  \"lastLogin\": null\n}",
     isLive: true,
     features: [
@@ -873,7 +873,7 @@ export const tools: ToolConfig[] = [
     description: "Paste a sample JSON object and get a Java class with typed fields, getters, and setters — ready to paste into your project.",
     metaTitle: "JSON to Java — Generate a Java POJO class from a JSON sample | JSONValidator.in",
     metaDescription: "Paste a sample JSON object and get a Java class with typed fields, getters, and setters — ready to paste into your project.",
-    keywords: ["json to java","json to java class","generate java pojo from json"],
+    keywords: ["json to java", "json to java class", "generate java pojo from json"],
     sampleInput: "{\n  \"id\": 1024,\n  \"name\": \"Asha Verma\",\n  \"isActive\": true,\n  \"roles\": [\"admin\", \"editor\"],\n  \"address\": { \"city\": \"Pune\", \"pincode\": \"411001\" },\n  \"lastLogin\": null\n}",
     isLive: true,
     features: [
@@ -910,7 +910,7 @@ export const tools: ToolConfig[] = [
     description: "Convert a JSON array of objects into a CREATE TABLE statement plus one INSERT per record — a fast way to seed a database table from API data.",
     metaTitle: "JSON to SQL — Generate CREATE TABLE and INSERT statements from JSON | JSONValidator.in",
     metaDescription: "Convert a JSON array of objects into a CREATE TABLE statement plus one INSERT per record — a fast way to seed a database table from API data.",
-    keywords: ["json to sql","json to sql insert","generate create table from json"],
+    keywords: ["json to sql", "json to sql insert", "generate create table from json"],
     sampleInput: "[\n  { \"id\": 1, \"name\": \"Asha Verma\", \"email\": \"asha@example.com\", \"isActive\": true },\n  { \"id\": 2, \"name\": \"Rohan Mehta\", \"isActive\": false }\n]",
     isLive: true,
     features: [
@@ -947,7 +947,7 @@ export const tools: ToolConfig[] = [
     description: "Check that a JSON document actually matches the structure you expect — required fields, correct types, string patterns, and value ranges — using a real JSON Schema.",
     metaTitle: "JSON Schema Validator — Validate a JSON document against a JSON Schema | JSONValidator.in",
     metaDescription: "Check that a JSON document actually matches the structure you expect — required fields, correct types, string patterns, and value ranges — using a real ...",
-    keywords: ["json schema validator","validate json against schema","json schema checker"],
+    keywords: ["json schema validator", "validate json against schema", "json schema checker"],
     sampleInput: "{\n  \"id\": 1024,\n  \"name\": \"Asha Verma\",\n  \"isActive\": true,\n  \"roles\": [\"admin\", \"editor\"],\n  \"address\": { \"city\": \"Pune\", \"pincode\": \"411001\" },\n  \"lastLogin\": null\n}",
     isLive: true,
     features: [
@@ -984,7 +984,7 @@ export const tools: ToolConfig[] = [
     description: "Paste a sample JSON document and get a draft JSON Schema inferred from its structure — types, required fields, and nested object/array shapes included.",
     metaTitle: "JSON Schema Generator — Infer a JSON Schema from a sample document | JSONValidator.in",
     metaDescription: "Paste a sample JSON document and get a draft JSON Schema inferred from its structure — types, required fields, and nested object/array shapes included.",
-    keywords: ["json schema generator","generate json schema from json","infer json schema"],
+    keywords: ["json schema generator", "generate json schema from json", "infer json schema"],
     sampleInput: "{\n  \"id\": 1024,\n  \"name\": \"Asha Verma\",\n  \"isActive\": true,\n  \"roles\": [\"admin\", \"editor\"],\n  \"address\": { \"city\": \"Pune\", \"pincode\": \"411001\" },\n  \"lastLogin\": null\n}",
     isLive: true,
     features: [
@@ -1021,7 +1021,7 @@ export const tools: ToolConfig[] = [
     description: "Paste a sample JSON record (or array) and generate any number of realistic fake records with the same shape — names, emails, dates, and IDs are generated to look plausible, not just random strings.",
     metaTitle: "API Mock Generator — Generate realistic fake JSON records matching a sample shape | JSONValidator.in",
     metaDescription: "Paste a sample JSON record (or array) and generate any number of realistic fake records with the same shape — names, emails, dates, and IDs are generate...",
-    keywords: ["json mock data generator","fake api data generator","generate mock json"],
+    keywords: ["json mock data generator", "fake api data generator", "generate mock json"],
     sampleInput: "[{\"id\":1,\"name\":\"Asha Verma\",\"email\":\"asha@example.com\",\"active\":true}]",
     isLive: true,
     features: [
@@ -1058,7 +1058,7 @@ export const tools: ToolConfig[] = [
     description: "Paste JSON before pasting it into a bug report, a Slack message, or a GitHub issue — this scans for AWS keys, Stripe keys, JWTs, private key blocks, emails, and fields with sensitive names like \"password\" or \"token\".",
     metaTitle: "JSON Secret Scanner — Scan JSON for API keys, tokens, and other secrets before you share it | JSONValidator.in",
     metaDescription: "Paste JSON before pasting it into a bug report, a Slack message, or a GitHub issue — this scans for AWS keys, Stripe keys, JWTs, private key blocks, ema...",
-    keywords: ["json secret scanner","detect api keys in json","sensitive data scanner json"],
+    keywords: ["json secret scanner", "detect api keys in json", "sensitive data scanner json"],
     sampleInput: `{
   "username": "asha",
   "password": "hunter2",
@@ -1068,6 +1068,7 @@ export const tools: ToolConfig[] = [
     isLive: true,
     isPro: true,
     proTier: "starter",
+    proBenefit: "Catch a leaked API key or password before it ends up in a bug report, a Slack thread, or a public commit — one accidental paste can mean rotating every credential in that payload.",
     features: [
       {
         title: "Pattern-based detection",
@@ -1102,7 +1103,7 @@ export const tools: ToolConfig[] = [
     description: "Automatically redact values in commonly-sensitive fields — passwords, tokens, emails, secrets — replacing them with a placeholder so you can safely share JSON in a bug report or documentation.",
     metaTitle: "JSON Sanitizer — Redact sensitive fields before sharing a JSON sample | JSONValidator.in",
     metaDescription: "Automatically redact values in commonly-sensitive fields — passwords, tokens, emails, secrets — replacing them with a placeholder so you can safely shar...",
-    keywords: ["json sanitizer","redact json fields","remove sensitive data from json"],
+    keywords: ["json sanitizer", "redact json fields", "remove sensitive data from json"],
     sampleInput: `{
   "username": "asha",
   "password": "hunter2",
@@ -1110,6 +1111,9 @@ export const tools: ToolConfig[] = [
   "isActive": true
 }`,
     isLive: true,
+    isPro: true,
+    proTier: "pro",
+    proBenefit: "Redact passwords, tokens, and emails automatically before you share a JSON sample in a bug report or docs — no more hand-editing sensitive fields one by one.",
     features: [
       {
         title: "Redacts by field name",
@@ -1144,9 +1148,12 @@ export const tools: ToolConfig[] = [
     description: "Analyzes a JSON document's depth, key counts, and array sizes, and flags structural patterns that tend to cause slow parsing, awkward APIs, or bloated payloads.",
     metaTitle: "JSON Complexity Analyzer — Spot deeply nested structures, huge arrays, and oversized payloads | JSONValidator.in",
     metaDescription: "Analyzes a JSON document's depth, key counts, and array sizes, and flags structural patterns that tend to cause slow parsing, awkward APIs, or bloated p...",
-    keywords: ["json complexity analyzer","json performance analysis","json depth checker"],
+    keywords: ["json complexity analyzer", "json performance analysis", "json depth checker"],
     sampleInput: "{\n  \"id\": 1024,\n  \"name\": \"Asha Verma\",\n  \"isActive\": true,\n  \"roles\": [\"admin\", \"editor\"],\n  \"address\": { \"city\": \"Pune\", \"pincode\": \"411001\" },\n  \"lastLogin\": null\n}",
     isLive: true,
+    isPro: true,
+    proTier: "pro",
+    proBenefit: "Know before you ship whether a response shape is going to be painful for API consumers to work with — deep nesting and huge arrays are easy to miss until someone else has to parse them.",
     features: [
       {
         title: "Depth and size metrics",
@@ -1181,11 +1188,12 @@ export const tools: ToolConfig[] = [
     description: "Reports minification savings and flags null or empty fields that could be omitted entirely, so you can trim an API response before shipping it.",
     metaTitle: "JSON Payload Optimizer — See how much smaller your JSON payload could be | JSONValidator.in",
     metaDescription: "Reports minification savings and flags null or empty fields that could be omitted entirely, so you can trim an API response before shipping it.",
-    keywords: ["json payload optimizer","reduce json size","json size optimization"],
+    keywords: ["json payload optimizer", "reduce json size", "json size optimization"],
     sampleInput: "{\n  \"id\": 1024,\n  \"name\": \"Asha Verma\",\n  \"isActive\": true,\n  \"roles\": [\"admin\", \"editor\"],\n  \"address\": { \"city\": \"Pune\", \"pincode\": \"411001\" },\n  \"lastLogin\": null\n}",
     isLive: true,
     isPro: true,
     proTier: "starter",
+    proBenefit: "Spot the bloat — duplicate objects, unused null fields, oversized arrays — before a slow API response becomes a support ticket.",
     features: [
       {
         title: "Minification savings",
@@ -1220,7 +1228,7 @@ export const tools: ToolConfig[] = [
     description: "Provide a simple {\\\"oldKey\\\": \\\"newKey\\\"} mapping and rename that key everywhere it appears in a JSON document, at any depth — useful for adapting one API's response shape to another's.",
     metaTitle: "JSON Field Mapper — Rename JSON keys throughout a document using a mapping table | JSONValidator.in",
     metaDescription: "Provide a simple {\\\"oldKey\\\": \\\"newKey\\\"} mapping and rename that key everywhere it appears in a JSON document, at any depth — useful for adapting one A...",
-    keywords: ["json field mapper","rename json keys","remap json fields"],
+    keywords: ["json field mapper", "rename json keys", "remap json fields"],
     sampleInput: "{\n  \"id\": 1024,\n  \"name\": \"Asha Verma\",\n  \"isActive\": true,\n  \"roles\": [\"admin\", \"editor\"],\n  \"address\": { \"city\": \"Pune\", \"pincode\": \"411001\" },\n  \"lastLogin\": null\n}",
     isLive: true,
     features: [
@@ -1257,9 +1265,12 @@ export const tools: ToolConfig[] = [
     description: "Paste a sample JSON response and get a clean Markdown table documenting every field, its inferred type, and an example value — ready to drop into API docs or a README.",
     metaTitle: "JSON Documentation Generator — Generate a Markdown field reference from a JSON sample | JSONValidator.in",
     metaDescription: "Paste a sample JSON response and get a clean Markdown table documenting every field, its inferred type, and an example value — ready to drop into API do...",
-    keywords: ["json documentation generator","generate api docs from json","json to markdown docs"],
+    keywords: ["json documentation generator", "generate api docs from json", "json to markdown docs"],
     sampleInput: "{\n  \"id\": 1024,\n  \"name\": \"Asha Verma\",\n  \"isActive\": true,\n  \"roles\": [\"admin\", \"editor\"],\n  \"address\": { \"city\": \"Pune\", \"pincode\": \"411001\" },\n  \"lastLogin\": null\n}",
     isLive: true,
+    isPro: true,
+    proTier: "pro",
+    proBenefit: "Turn any JSON sample into a clean field reference in one click — the documentation that usually never gets written because nobody has time to write it by hand.",
     features: [
       {
         title: "Markdown table output",
@@ -1294,9 +1305,12 @@ export const tools: ToolConfig[] = [
     description: "Paste a JSON array of records — API responses, log entries, exported rows — and see what percentage of records include each field, and whether its type is consistent across all of them.",
     metaTitle: "JSON Field Usage Heatmap — See which fields actually show up across many JSON records | JSONValidator.in",
     metaDescription: "Paste a JSON array of records — API responses, log entries, exported rows — and see what percentage of records include each field, and whether its type ...",
-    keywords: ["json field usage heatmap","json field consistency checker","analyze json array fields"],
+    keywords: ["json field usage heatmap", "json field consistency checker", "analyze json array fields"],
     sampleInput: "[\n  { \"id\": 1, \"name\": \"Asha Verma\", \"email\": \"asha@example.com\", \"isActive\": true },\n  { \"id\": 2, \"name\": \"Rohan Mehta\", \"isActive\": false }\n]",
     isLive: true,
+    isPro: true,
+    proTier: "starter",
+    proBenefit: "See which fields are actually reliable across hundreds of records before you build a client that assumes they're always there.",
     features: [
       {
         title: "Presence percentage per field",
@@ -1331,7 +1345,7 @@ export const tools: ToolConfig[] = [
     description: "Compare an actual API response against an expected \\\"contract\\\" sample, checking types and field presence only — not literal values — to catch breaking API changes before they reach production.",
     metaTitle: "JSON API Contract Checker — Check whether an API response matches its expected shape | JSONValidator.in",
     metaDescription: "Compare an actual API response against an expected \\\"contract\\\" sample, checking types and field presence only — not literal values — to catch breaking ...",
-    keywords: ["json api contract checker","api contract testing json","compare api response shape"],
+    keywords: ["json api contract checker", "api contract testing json", "compare api response shape"],
     sampleInput: "{\n  \"id\": 1024,\n  \"name\": \"Asha Verma\",\n  \"isActive\": true,\n  \"roles\": [\"admin\", \"editor\"],\n  \"address\": { \"city\": \"Pune\", \"pincode\": \"411001\" },\n  \"lastLogin\": null\n}",
     isLive: true,
     features: [
@@ -1382,6 +1396,7 @@ export const tools: ToolConfig[] = [
     isLive: true,
     isPro: true,
     proTier: "starter",
+    proBenefit: "Get one number that tells you if a JSON document is production-ready — instead of manually checking five different things every time.",
     features: [
       { title: "Five weighted categories", description: "Syntax, structure, security, maintainability, and performance — 20 points each." },
       { title: "Every deduction explained", description: "No black-box scoring — each point lost is tied to a specific, named issue." },
@@ -1415,6 +1430,7 @@ export const tools: ToolConfig[] = [
     isLive: true,
     isPro: true,
     proTier: "starter",
+    proBenefit: "Know immediately whether an API change is safe to deploy or will break existing clients — before it's a 2am incident instead of a code review comment.",
     features: [
       { title: "Rename detection", description: "Distinguishes a renamed field from an unrelated add+remove pair." },
       { title: "Breaking vs. non-breaking", description: "Every change is classified so you know exactly what actually risks breaking a client." },

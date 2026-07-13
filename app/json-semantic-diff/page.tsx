@@ -31,7 +31,7 @@ export default function Page() {
         ])}
       />
       <ToolPageShell tool={tool}>
-        <ProGate requiredPlan={tool.proTier ?? "starter"} featureName={tool.name}>
+        <ProGate tool={tool}>
           <SemanticDiffWorkspace sampleA={tool.sampleInput} sampleB={SAMPLE_AFTER} />
         </ProGate>
       </ToolPageShell>

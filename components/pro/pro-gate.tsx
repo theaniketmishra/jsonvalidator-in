@@ -1,26 +1,27 @@
 import Link from "next/link";
 import { Lock } from "lucide-react";
 import { getCurrentSubscription, isSubscriptionUsable } from "@/lib/subscription";
-import { planSatisfies, pricingPlans, type PlanId } from "@/config/pricing";
+import { planSatisfies, pricingPlans } from "@/config/pricing";
+import { CheckoutButton } from "@/features/billing/checkout-button";
+import type { ToolConfig } from "@/types/tool";
 
 interface ProGateProps {
-  requiredPlan: PlanId;
-  featureName: string;
+  tool: ToolConfig;
   children: React.ReactNode;
 }
 
-const linkButtonPrimary =
-  "inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow-sm shadow-primary/20 hover:brightness-110";
 const linkButtonOutline =
   "inline-flex h-10 items-center justify-center rounded-md border border-border px-4 text-sm font-medium hover:bg-muted";
 
 /**
  * Server-side gate for Pro/Business-tier tool pages. Checks the signed-in
- * user's subscription and either renders the tool or an upgrade prompt.
- * This check happens on the server — it is not something client JS can
- * bypass by editing local state.
+ * user's subscription and either renders the tool or an upgrade prompt with
+ * tool-specific value copy and a direct one-click path to checkout. This
+ * check happens on the server — it is not something client JS can bypass by
+ * editing local state.
  */
-export async function ProGate({ requiredPlan, featureName, children }: ProGateProps) {
+export async function ProGate({ tool, children }: ProGateProps) {
+  const requiredPlan = tool.proTier ?? "starter";
   const subscription = await getCurrentSubscription();
   const hasAccess = isSubscriptionUsable(subscription) && planSatisfies(subscription.plan, requiredPlan);
 
@@ -34,26 +35,32 @@ export async function ProGate({ requiredPlan, featureName, children }: ProGatePr
       <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/15 text-primary">
         <Lock className="h-5 w-5" />
       </span>
-      <h2 className="mt-4 font-display text-xl font-bold">{featureName} is a Pro feature</h2>
-      <p className="mt-2 text-sm text-muted-foreground">
-        Available on the {requiredPlanConfig?.name ?? "Pro"} plan and above, starting at $
-        {requiredPlanConfig?.priceMonthly}/month — with a 7-day free trial, no charge until it ends.
+      <h2 className="mt-4 font-display text-xl font-bold">{tool.name} is a {requiredPlanConfig?.name ?? "Pro"} feature</h2>
+
+      {tool.proBenefit && (
+        <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">{tool.proBenefit}</p>
+      )}
+
+      <p className="mt-3 text-xs font-medium uppercase tracking-wide text-primary">
+        {requiredPlanConfig?.name ?? "Pro"} · ${requiredPlanConfig?.priceMonthly}/mo · 7-day free trial
       </p>
-      <div className="mt-6 flex justify-center gap-3">
-        {loggedIn ? (
-          <Link href="/pricing" className={linkButtonPrimary}>
-            Start free trial
+
+      <div className="mt-6 flex flex-col items-center gap-3">
+        <div className="w-full max-w-xs">
+          <CheckoutButton
+            plan={requiredPlan}
+            label={loggedIn ? "Start 7-day free trial" : "Sign up & start free trial"}
+            loggedIn={loggedIn}
+          />
+        </div>
+        {!loggedIn && (
+          <Link href="/login" className={linkButtonOutline}>
+            Already have an account? Log in
           </Link>
-        ) : (
-          <>
-            <Link href="/login" className={linkButtonOutline}>
-              Log in
-            </Link>
-            <Link href="/signup" className={linkButtonPrimary}>
-              Sign up free
-            </Link>
-          </>
         )}
+        <Link href="/pricing" className="text-xs text-muted-foreground hover:text-foreground hover:underline">
+          Compare all plans →
+        </Link>
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ export default function Page() {
         ])}
       />
       <ToolPageShell tool={tool}>
-        <ProGate requiredPlan={tool.proTier ?? "starter"} featureName={tool.name}>
+        <ProGate tool={tool}>
           <ComplexityWorkspace sample={tool.sampleInput} />
         </ProGate>
       </ToolPageShell>
