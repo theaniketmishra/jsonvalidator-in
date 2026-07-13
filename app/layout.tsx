@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Sora, Inter, JetBrains_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
@@ -9,18 +9,25 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { websiteSchema } from "@/lib/seo/schema";
 import { siteConfig } from "@/config/site";
 
-const fontDisplay = Sora({ subsets: ["latin"], variable: "--font-display" });
-const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
-const fontMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
+const fontSans = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: { default: siteConfig.title, template: `%s | ${siteConfig.name}` },
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
+  },
   description: siteConfig.description,
   keywords: [...siteConfig.keywords],
   authors: [{ name: siteConfig.creator }],
   creator: siteConfig.creator,
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     url: siteConfig.url,
@@ -35,15 +42,29 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },
-  robots: { index: true, follow: true },
-  icons: { icon: "/favicon.ico" },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable} font-sans`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+      <body className={`${fontSans.variable} font-sans`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
           <JsonLd data={websiteSchema()} />
           <div className="relative flex min-h-screen flex-col">
             <Navbar />
